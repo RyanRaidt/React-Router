@@ -18,13 +18,62 @@ body > div {
   position: relative;
 }
 
+#header {
+  position: relative;
+  z-index: 3;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1em 0;
+}
+
 #navbar {
   padding: 1em;
   display: flex;
   justify-content: center;
   gap: 1em;
-  position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  width: 80px;
+  height: 80px; 
+  line-height: 80px;
+  border-radius: 50%; 
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+
+#navbar a[href="/"] {
+  background-color: #ffffff;
+  color: black;
+}
+
+#navbar a[href="/blue"] {
+  background-color: #275db3;
+}
+
+#navbar a[href="/red"] {
+  background-color: #b05f6d;
+}
+
+#navbar a[href="/green"] {
+  background-color: #2e8b57;
+}
+
+#navbar a[href="/yellow"] {
+  background-color: #ffd700;
+  color: black;
+}
+
+#navbar a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #main-section {
@@ -32,15 +81,29 @@ body > div {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 3;
 }
 
-#header {
-  position: relative;
+#footer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   z-index: 3;
-  font-size: 2rem;
-  text-align: center;
-  margin: 1em 0;
+}
+
+#footer a {
+  color: white;
+  text-decoration:none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
 }
 
 @keyframes colorExplosion {
@@ -74,34 +137,26 @@ body > div {
   animation: colorExplosion 1s ease-out forwards;
 }
 
-#navbar a {
-  text-decoration: none;
+.home {
+  background-color: #ffffff; 
+}
+.red {
+  background-color: #b05f6d;
   color: white;
-  font-weight: bold;
-  text-align: center;
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  border-radius: 50%;
-  margin: 0 15px;
-  transition: transform 0.3s ease;
-  font-size: 14px;
 }
 
-#navbar a[href="/"] {
-  background-color: gray;
+.blue {
+  background-color: #275db3;
+  color: white;
+}
+
+.green {
+  background-color: #2e8b57;
+  color: white;
+}
+
+.yellow {
+  background-color: #ffd700;
   color: black;
 }
 
-#navbar a[href="/blue"] {
-  background-color: #0e4295;
-}
-
-#navbar a[href="/red"] {
-  background-color: #ab3045;
-}
-
-#navbar a:hover {
-  transform: scale(1.1);
-}

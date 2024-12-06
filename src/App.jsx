@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
-import Red from "./components/Red";
-import Blue from "./components/Blue";
+import Navbar from "./components/Navbar";
+import MainContainer from "./components/MainContainer";
+import Footer from "./components/Footer";
 
 function App() {
   const [bgColor, setBgColor] = useState("");
@@ -26,28 +25,10 @@ function App() {
         className={isExploding ? "exploding" : ""}
         style={{ backgroundColor: explosionColor }}
       ></div>
-
       <h1 id="header">Color Viewer</h1>
-
-      <div id="navbar">
-        <Link to="/" onClick={() => changeBackgroundColor("gray")}>
-          Home
-        </Link>
-        <Link to="/blue" onClick={() => changeBackgroundColor("#0e4295")}>
-          Blue
-        </Link>
-        <Link to="/red" onClick={() => changeBackgroundColor("#ab3045")}>
-          Red
-        </Link>
-      </div>
-
-      <div id="main-section">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blue" element={<Blue />} />
-          <Route path="/red" element={<Red />} />
-        </Routes>
-      </div>
+      <Navbar changeBackgroundColor={changeBackgroundColor} />
+      <MainContainer />
+      <Footer />
     </div>
   );
 }
